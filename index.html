@@ -14,17 +14,25 @@
         <h2>Vacation Contest Sign-Up Form</h2>
         <form method="GET" action="results.html">
             <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
-                <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <label for="firstname">Your First Name</label><span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" minlength="2" maxlength="35" required>
+                
+
+                <label for="lastname">Your Last Name</label><span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" minlength="2" maxlength="35" required >
+                
+                <label for="age">Your Age</label>
+                <input type="number" id="age" name="age" min="21" max="120">
+
+                <label for="password">Your Secret Code (must be 6 alphanumeric characters)<span class="required-field">*</span></label>
+                <input type="password" id="password" name="password" pattern="[0-9a-zA-Z]{6}" title="6-Character Alphanumeric Pass Code" required>
             </div>
             <fieldset>
                 <legend>Your Contact Info</legend>
                 <div>
-                    <label for="email">Your Email</label>
+                    <label for="email">Your Email</label><span class="required-field">*</span>
                     <input type="email" id="email" name="email">
-                </div>
+                    </div>
                 <div>
                     <label for="address">Your Street Address</label>
                     <input type="text" id="address" name="address">
@@ -32,8 +40,11 @@
                 <div>
                     <label for="city">Your City</label>
                     <input type="text" id="city" name="city">
+                   
                     <label for="state">Your State</label>
                     <input list="state-list" id="state" name="state">
+                   
+
                     <datalist id="state-list">
                         <option value="AK">Alaska</option>
                         <option value="AL">Alabama</option>
@@ -86,7 +97,8 @@
                         <option value="WY">Wyoming</option>
                     </datalist>
                     <label for="zip">Your Zipcode</label>
-                    <input type="text" id="zip" name="zip">
+                    <input type="text" id="zip" name="zip" pattern="\d{5}" title="Enter a 5 Digit Zip Code"/>
+                   
                 </div>
             </fieldset>
 
